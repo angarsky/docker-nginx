@@ -21,12 +21,12 @@ RUN cd "/tmp" \
 	&& NPS_DIR=$(find . -name "*pagespeed-ngx-${NPS_VERSION}" -type d) \
 	&& cd "$NPS_DIR" \
 	&& PSOL_URL=https://dl.google.com/dl/page-speed/psol/${PSOL_RELEASE}.tar.gz \
-    && [ -e scripts/format_binary_url.sh ] && PSOL_URL=$(scripts/format_binary_url.sh PSOL_BINARY_URL) \
-    && wget ${PSOL_URL} \
-    && tar -xzvf $(basename ${PSOL_URL}) \
+	&& [ -e scripts/format_binary_url.sh ] && PSOL_URL=$(scripts/format_binary_url.sh PSOL_BINARY_URL) \
+	&& wget ${PSOL_URL} \
+	&& tar -xzvf $(basename ${PSOL_URL}) \
 
-  # Installs NGINX
-  # The NGINX config is taken from the official docker image by an execution of the command "nginx -V"
+  	# Installs NGINX
+  	# The NGINX config is taken from the official docker image by an execution of the command "nginx -V"
 	&& cd "/tmp" \
 	&& wget -qO- http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz | tar -zx \
 	&& cd "/tmp/nginx-${NGINX_VERSION}" \
