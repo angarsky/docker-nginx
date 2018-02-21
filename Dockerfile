@@ -82,6 +82,10 @@ RUN mkdir -p /var/cache/nginx/{client_temp,fastcgi_temp,proxy_temp,uwsgi_temp,sc
 RUN cd && \
 	rm -rf /tmp/*
 
+# Adds a basic configuration
+COPY config/nginx.conf /etc/nginx/
+COPY config/pagespeed.conf /etc/nginx/
+
 WORKDIR /var/www
 
 CMD ["nginx", "-g", "daemon off;"]
