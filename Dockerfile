@@ -2,7 +2,7 @@ FROM debian:stretch-slim
 
 MAINTAINER Semen Angarsky <seofack@gmail.com>
 
-ENV NGINX_VERSION 1.19.2
+ENV NGINX_VERSION 1.21.1
 # About releases: https://www.modpagespeed.com/doc/release_notes
 ENV NPS_VERSION 1.13.35.2-stable
 
